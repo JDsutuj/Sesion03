@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información</title>
+</head>
+<body>
+    <font face="Georgia">  
+        <h1><i>Contactanos</i></h1>
+        <h1><i>Contact us</i></h1>
+
+        <nav>
+            <ul id="button">
+                <li><a href="indext.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="info.html">Información</a></li>
+            </ul>
+        </nav>
+
+        <h2>Tel: 5932-7140</h2>
+        <h2>Correo: Karen.S.A.@gmail.com.gt</h2>
+        <h2>Dirección: Del centro, 7a Avenida 9-11, Cdad. de Guatemala, Guatemala</h2>
+
+        <div>
+            <h3>Suscríbete a nuestro boletín:</h3>
+            <input type="text" id="emailInput" placeholder="Ingresa tu correo electrónico">
+            <button id="submitButton">Enviar</button>
+        </div>
+        <div>
+            <button id="createUserButton">Crear Usuario</button>
+            <div id="userInfo"></div>
+        </div>
+
+        <script type="text/javascript">
+            function Usuario(nombre, correo, telefono) {
+                this.nombre = nombre;
+                this.correo = correo;
+                this.telefono = telefono;
+
+                this.mostrarInfo = function() {
+                    return `Nombre: ${this.nombre}<br>Correo: ${this.correo}<br>Teléfono: ${this.telefono}`;
+                };
+            }
+
+            var createUserButton = document.getElementById('createUserButton');
+            var userInfoDiv = document.getElementById('userInfo');
+
+            createUserButton.addEventListener('click', function() {
+
+                var nuevoUsuario = new Usuario('Carlos Fernández', 'carlos.fernandez@example.com', '555-9876');
+                userInfoDiv.innerHTML = nuevoUsuario.mostrarInfo();
+            });
+
+        </script>
+            <script type="text/javascript" src="./app.js"></script>
+    </body>
+</html>
